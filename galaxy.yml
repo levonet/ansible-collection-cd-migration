@@ -1,0 +1,13 @@
+namespace: levonet
+name: cd-migration
+version: 0.0.0
+readme: README.md
+authors:
+- Pavlo
+license:
+    - "MIT"
+tags:
+    - cd
+    - collection
+repository: https://github.com/levonet/ansible-collection-cd-migration
+

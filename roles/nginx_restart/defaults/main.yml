@@ -1,0 +1,3 @@
+---
+nginx_service: native
+nginx_container_name: nginx

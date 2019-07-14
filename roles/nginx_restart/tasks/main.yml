@@ -1,0 +1,18 @@
+---
+- name: Test nginx config
+  command: nginx -t
+  when: nginx_service == 'native'
+
+- name: Test nginx config
+  command: docker exec -t nginx nginx -t
+  when: nginx_service == 'docker'
+
+- name: Restart nginx
+  service:
+    state: restarted
+    name: nginx
+  when: nginx_service == 'native'
+
+- name: Restart nginx
+  command: docker exec -t {{ nginx_container_name }} nginx -s reload
+  when: nginx_service == 'docker'
